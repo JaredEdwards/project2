@@ -3,7 +3,6 @@ class CreateIdeas < ActiveRecord::Migration[5.0]
     create_table :ideas do |t|
       t.string :author
       t.string :title
-      t.datetime :datetime
       t.text :content
 
       t.timestamps

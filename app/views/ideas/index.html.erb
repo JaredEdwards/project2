@@ -1,2 +1,9 @@
 <h1>Ideas#index</h1>
 <p>Find me in app/views/ideas/index.html.erb</p>
+
+
+<% @ideas.each do |idea| %>
+
+  <h4><%= link_to idea.title, ideas_path %></h4>
+
+<% end %>
