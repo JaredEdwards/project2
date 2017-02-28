@@ -1,14 +1,22 @@
 <h1>Ideas#show</h1>
 
-<h1>This is a brilliant idea!</h1>
+<h1>Checkout this brilliant idea!</h1>
 
-<%= link_to "Edit this idea", edit_idea_path(@idea) %>
+<%#= link_to "Edit this idea", edit_idea_path(@idea) %>
 
-<h1><%= @idea.title %></h1>
+<h1>This is the title of the Idea: <%= @idea.title %></h1>
 
-<% @idea.endorsement.each do |endorsement| %>
-  <div>
-    <h2><%= link_to endorsement.author, idea_endorsement_path %></h2>
-  </div>
 
-<% end %>
+<section>
+  <h3><%= @idea.author %> </h3>
+  <p>
+    <%= @idea.content %>
+  </p>
+</section>
+<div>
+<h3><%= link_to "Check out who has endorsed this idea", idea_endorsements_path(@idea.id) %></h3>
+
+
+<h3><%= link_to "Edit this idea", edit_idea_path(@idea.id) %></h3>
+<h3><%= link_to "Delete this idea", idea_path(@idea), method: :delete %></h3>
+</div>

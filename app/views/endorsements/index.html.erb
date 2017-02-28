@@ -1,14 +1,15 @@
 <h1>Endorsements#index</h1>
 
-<%= @endorsements.each do |endorsement| %>
+<h3><%= link_to "Endorse this idea!", new_idea_endorsement_path %></h3>
 
-  <%= link_to endorsment.
+<% @idea.endorsements.each_with_index do |endorsement, index |%>
 
-  <!-- <h2> endorsement.amount</h2> -->
+  <h2><%=index+1%>. <%= link_to endorsement.author, idea_endorsement_path(@idea, endorsement) %>
 
+  </h2>
 <% end %>
 
 
 <h1>
-  This page needs to list all endorsements for id 1
+  This page needs to list all endorsements for specific id
 </h1>

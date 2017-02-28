@@ -1,2 +1,19 @@
 <h1>Ideas#edit</h1>
-<p>Find me in app/views/ideas/edit.html.erb</p>
+<p>EDIT THIS IDEA </p>
+
+<h2> Edit the idea titled</h2>
+
+<%= link_to "Back to all ideas", ideas_path %>
+
+<%= form_for @idea do |f| %>
+  <%= f.label :author %>
+  <%= f.text_field :author %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :content %>
+  <%= f.text_field :content %>
+
+  <%= f.submit %>
+<% end %>

@@ -1,2 +1,17 @@
 <h1>Endorsements#edit</h1>
-<p>Find me in app/views/endorsements/edit.html.erb</p>
+
+<h1>Edit endorsement for <%=@endorsement.author %></h1>
+
+<%= form_for [@idea, @endorsement] do |f| %>
+  <%= f.label :author %>
+  <%= f.text_field :author %>
+
+  <%= f.label :amount %>
+  <%= f.text_field :amount %>
+
+  <%= f.submit %>
+<% end %>
+
+
+
+<h1>be able to edit your endorsement NOT working</h1>

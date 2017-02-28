@@ -1,10 +1,11 @@
 <h1>Endorsements#show</h1>
 
+
 <div>
-  <h1><%= @endorsement.author %> </h1>
-  <h2>$<%= @endorsement.amount %> </h2>
+  <h1>Thanks to <%= @endorsement.author %>! </h1>
+  <h2>Endorsement amount: <%= number_to_currency(@endorsement.amount) %> </h2>
 </div>
 
-
+<%= link_to "Edit this endorsement", edit_idea_endorsement_path(@endorsement.idea, @endorsement) %>
 
 <h1>This needs to find a specific endorsement</h1>

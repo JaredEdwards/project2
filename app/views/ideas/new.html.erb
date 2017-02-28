@@ -1,2 +1,18 @@
 <h1>Ideas#new</h1>
-<p>Find me in app/views/ideas/new.html.erb</p>
+
+<h1>Enter your new idea here</h1>
+
+<%= link_to "Back to all ideas", ideas_path %>
+
+<%= form_for @idea do |f| %>
+  <%= f.label :author %>
+  <%= f.text_field :author %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :content %>
+  <%= f.text_field :content %>
+
+  <%= f.submit %>
+<% end %>
