@@ -3,7 +3,7 @@ class CreateEndorsements < ActiveRecord::Migration[5.0]
     create_table :endorsements do |t|
       t.string :author
       t.decimal :amount
-      t.references :ideas, foreign_key: true
+      t.references :idea, foreign_key: true
 
       t.timestamps
     end

@@ -1,2 +1,19 @@
 <h1>Endorsements#new</h1>
-<p>Find me in app/views/endorsements/new.html.erb</p>
+
+<h1> Thank you, add your endorsement to <%=@idea.title %> </h1>
+
+<%= form_for [@idea, @endorsement] do |f| %>
+  <%= f.label :author %>
+  <%= f.text_field :autor %>
+
+  <%= f.label :amount %>
+  <%= f.text_field :amount %>
+
+  <%= f.submit %>
+<% end %> 
+
+
+
+
+
+<h1>needs to add an endorsement to an idea</h1>

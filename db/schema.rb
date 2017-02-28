@@ -18,10 +18,10 @@ ActiveRecord::Schema.define(version: 20170227221821) do
   create_table "endorsements", force: :cascade do |t|
     t.string   "author"
     t.decimal  "amount"
-    t.integer  "ideas_id"
+    t.integer  "idea_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["ideas_id"], name: "index_endorsements_on_ideas_id", using: :btree
+    t.index ["idea_id"], name: "index_endorsements_on_idea_id", using: :btree
   end
 
   create_table "ideas", force: :cascade do |t|
@@ -32,5 +32,5 @@ ActiveRecord::Schema.define(version: 20170227221821) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "endorsements", "ideas", column: "ideas_id"
+  add_foreign_key "endorsements", "ideas"
 end
