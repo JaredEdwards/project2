@@ -13,7 +13,7 @@ class IdeasController < ApplicationController
   end
 
   def create
-    @idea = Idea.create!(idea_params)
+    @idea = Idea.create!(idea_params.merge({user: current_user}))
 
     redirect_to idea_path(@idea)
   end
@@ -24,14 +24,22 @@ class IdeasController < ApplicationController
 
   def update
     @idea = Idea.find(params[:id])
-    @idea.update(idea_params)
+    if(current_user == @idea.user)
+      @idea.update(idea_params.merge(user: current_user))
+    else
+      flash[:alert] = "You cant update this"
+    end
 
     redirect_to idea_path(@idea)
   end
 
   def destroy
     @idea = Idea.find(params[:id])
-    @idea.destroy
+    if(current_user == @idea.user)
+      @idea.destroy
+    else
+      flash[:alert] = "You are not the author of this post"
+    end
 
     redirect_to ideas_path
   end

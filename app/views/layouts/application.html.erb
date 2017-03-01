@@ -9,9 +9,19 @@
   </head>
 
   <body>
-    <h1><%= link_to "View The Ideas", ideas_path %>
-    </h1>
+  <nav>
+    <h1><%= link_to "View The Ideas", ideas_path %></h1>
+    <% if !current_user %>
+      <%= link_to "Sign up", new_user_registration_path %>
+      <%= link_to "Sign in", new_user_session_path %>
+    <% else %>
+      <%= link_to "Sign out", destroy_user_session_path, :method => :delete%>
+      <br /><h3>User: <%= current_user.email %></h3>
+    <% end %>
   </nav>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
     <%= yield %>
   </body>
 </html>
