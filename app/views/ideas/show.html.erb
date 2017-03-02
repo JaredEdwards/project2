@@ -15,8 +15,10 @@
   <br />
 <h3 class ="links"><%= link_to "CHECK OUT WHO HAS ENDORSED THIS", idea_endorsements_path(@idea.id) %></h3>
 <br />
-<h3>Idea creator functions:</h3>
+
+
 <% if current_user == @idea.user %>
+<h3>Idea creator functions:</h3>
   <h3><%= link_to "Edit this idea", edit_idea_path(@idea.id) %></h3>
   <h3><%= link_to "Delete this idea", idea_path(@idea), method: :delete %></h3>
 <% end %>
