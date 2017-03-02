@@ -5,14 +5,16 @@
 <%= link_to "Back to all ideas", ideas_path %>
 
 <%= form_for @idea do |f| %>
+
   <%= f.label :author %>
   <%= f.text_field :author %>
 
+
   <%= f.label :title %>
   <%= f.text_field :title %>
-
-  <%= f.label :content %>
-  <%= f.text_field :content %>
-
+  <br />
+  <%= f.label :content %><br />
+  <%= f.text_area :title %>
+  <br />
   <%= f.submit %>
 <% end %>

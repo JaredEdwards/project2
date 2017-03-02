@@ -12,7 +12,6 @@
 
     <%= render partial: "shared/navbar" %>
 
-
     <div class="container-fluid center-boxes">
 
   <% if flash[:alert] %>
@@ -23,9 +22,9 @@
     <div class="alert alert-success" role="alert">Signed in</div>
   <% end %>
 
+  </div>
 
     <%= yield %>
 
-  </div>
   </body>
 </html>

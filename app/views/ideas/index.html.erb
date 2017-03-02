@@ -2,10 +2,13 @@
 <h1>List of all Ideas:</h1>
 <div class="container-fluid">
 
+  <h3><%= link_to "Add your idea here", new_idea_path %></h3>
+<div class="container">
+
 <% @ideas.each_with_index do |idea, i |%>
 
   <div class="row center">
-    <div class="col-sm-6 col-md-4">
+    <div class="col-sm-6 col-md-4 center">
       <div class="thumbnail">
         <div class="caption">
           <h3><%= idea.title %></h3>
@@ -16,13 +19,12 @@
       </div>
     </div>
   </div>
-<% if i ==5 %>
-  <% break %>
+
+  <% if i ==10 %>
+    <% break %>
+  <% end %>
+
 <% end %>
-
-
-
-<% end %>
-
-<h5><%= link_to "Add your idea here", new_idea_path %></h5>
 </div>
+</div>
+<h3><%= link_to "Click here to see all the ideas", ideas_path %></h3>
