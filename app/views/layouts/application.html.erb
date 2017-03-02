@@ -3,28 +3,33 @@
   <head>
     <title>Idea Logger</title>
     <%= csrf_meta_tags %>
-
+<link href="https://fonts.googleapis.com/css?family=Architects+Daughter|Rock+Salt" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
+    <div class="container .col-lg-10">
 
     <%= render partial: "shared/navbar" %>
 
     <div class="container-fluid center-boxes">
 
-  <% if flash[:alert] %>
-    <div class="alert alert-warning" role="alert">Signed out</div>
-  <% end %>
+      <% if flash[:alert] %>
+        <div class="alert alert-warning" role="alert">Signed out</div>
+      <% end %>
 
-  <% if flash[:notice] %>
-    <div class="alert alert-success" role="alert">Signed in</div>
-  <% end %>
+      <% if flash[:notice] %>
+        <div class="alert alert-success" role="alert">Signed in</div>
+      <% end %>
 
   </div>
+  <div class="container-fluid">
+
 
     <%= yield %>
 
+  </div>
+
+  </div>
   </body>
 </html>

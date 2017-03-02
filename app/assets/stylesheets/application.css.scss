@@ -18,24 +18,51 @@
 @import "bootstrap";
 
 
-.center {
-  margin: auto 0;
+.logo a {
+  font-family: 'Rock Salt', cursive;
+  font-size: 40px;
+  text-decoration: none;
+  color: #9C2707;
+}
 
+.links a {
+  font-size: 30px;
+  color: #9C2707;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.pad-left {
+  padding-left: 150px;
+}
+
+.identify-box {
+  border: 1px solid red;
+  width: 100%;
+  text-align: center;
 }
 
 .center-boxes {
-margin:auto 0;
-padding-left: 150px;
+  margin:auto 0;
+
 }
 
-.menu-padding {
+.menu-button {
   padding-left: 16px;
   padding-right: 16px;
   padding-top: 14px;
   padding-bottom: 14px;
+  font-size: 28px;
 }
 
-.window {
-  height:100vh;
-  width: 80%
+.content {
+  width: 86%;
+  height: 100%;
+}
+
+body {
+  font-family: 'Architects Daughter', cursive;
+
 }

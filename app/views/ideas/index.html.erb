@@ -1,30 +1,32 @@
-<h1>Ideas#index</h1>
+
 <h1>List of all Ideas:</h1>
-<div class="container-fluid">
+
 
   <h3><%= link_to "Add your idea here", new_idea_path %></h3>
-<div class="container">
 
-<% @ideas.each_with_index do |idea, i |%>
 
-  <div class="row center">
-    <div class="col-sm-6 col-md-4 center">
-      <div class="thumbnail">
-        <div class="caption">
-          <h3><%= idea.title %></h3>
-          <p><%= idea.content.first(80) %>.....</p>
+<div class="container-fluid conent">
 
-          <%= link_to "Click to read more", idea_path(idea), class: "btn btn-primary" %>
+  <% @ideas.each_with_index do |idea, i |%>
+
+    <div class="row identify-box pad-left">
+      <div class="col-sm-6 col-md-8">
+        <div class="thumbnail text-center">
+          <div class="caption">
+            <h3><%= idea.title %></h3>
+            <p><%= idea.content.first(80) %>.....</p>
+
+            <%= link_to "Click to read more", idea_path(idea), class: "btn btn-primary" %>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <% if i ==10 %>
-    <% break %>
+    <%# if i ==10 %>
+      <%# break %>
+    <%# end %>
+
   <% end %>
+</div>
 
-<% end %>
-</div>
-</div>
-<h3><%= link_to "Click here to see all the ideas", ideas_path %></h3>
+<h3><%#= link_to "Click here to see all the ideas", ideas_path %></h3>
