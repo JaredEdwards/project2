@@ -11,27 +11,21 @@
   <body>
 
     <%= render partial: "shared/navbar" %>
+
+
     <div class="container-fluid center-boxes">
-  <nav>
-    <h1><%= link_to "View The Ideas", ideas_path %></h1>
-    <% if !current_user %>
-      <%= link_to "Sign up", new_user_registration_path %>
-      <%= link_to "Sign in", new_user_session_path %>
-    <% else %>
-      <%= link_to "Sign out", destroy_user_session_path, :method => :delete%>
-      <br /><h3>User: <%= current_user.email %></h3>
-    <% end %>
-  </nav>
+
   <% if flash[:alert] %>
     <div class="alert alert-warning" role="alert">Signed out</div>
   <% end %>
+
   <% if flash[:notice] %>
     <div class="alert alert-success" role="alert">Signed in</div>
   <% end %>
 
 
     <%= yield %>
-    
+
   </div>
   </body>
 </html>
