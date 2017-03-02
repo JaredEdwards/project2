@@ -1,26 +1,23 @@
 
-<h1> Thank you, add your endorsement to <%=@idea.title %> </h1>
+<h1> Thank you, add your endorsement to: <br /><br /><span class="idea-title"> <%=@idea.title.upcase %></span> </h1>
 
-<%= form_for [@idea, @endorsement] do |f| %>
-  <div class="form-group">
-    <%= f.label :author, "Endorser: " %><br />
-    <%= f.text_field :author %>
+  <div class="log-in">
+
+  <%= form_for [@idea, @endorsement] do |f| %>
+
+    <div class="form-group">
+      <%= f.label :author, "Endorser: " %><br />
+      <%= f.text_field :author, :required => true, :placeholder=>'Endorser Full Name' %>
+    </div>
+    <div class="form-group">
+    <%= f.label :amount, "Enter the amount: "%><br />
+    <%= number_to_currency(f.text_field :amount, :required => true, :placeholder=>'US Dollars') %>
+    </div>
+    <div>
+      <span class="btn-default">
+      <%= f.submit %></span>
+    </div>
+  <% end %>
   </div>
 
-  <%= f.label :amount, "Enter the amount: "%><br />
-  <%= f.text_field :amount %>
-  <br />
-  <br />
-  <%= f.submit %>
-<% end %>
-<form>
-  <div class="form-group">
-    <label for="Endorser Name">Endorser</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Full Name">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Endorsement Amount</label>
-    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter total amount here">
-  </div>
-  <button type="submit" class="btn btn-default">Create Endorsement</button>
-</form>
+<!-- data: { confirm: "Are you sure? \n\n All endorsements are FINAL" } -->

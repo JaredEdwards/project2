@@ -1,17 +1,16 @@
 
-<h1>List of all Ideas:</h1>
 
 
-  <h3><%= link_to "Add your idea here", new_idea_path %></h3>
 
+<h1>List of all Ideas posted so far!</h1>
 
-<div class="container-fluid conent">
-
+  <h3 class="links"><%= link_to "ADD YOUR IDEA HERE", new_idea_path %></h3>
+  <br />
   <% @ideas.each_with_index do |idea, i |%>
 
-    <div class="row identify-box pad-left">
-      <div class="col-sm-6 col-md-8">
-        <div class="thumbnail text-center">
+    <div class="row pad-left">
+       <div class="col-sm-6 col-md-8"> <!--box in questions -->
+        <div class="thumbnail text-center ">
           <div class="caption">
             <h3><%= idea.title %></h3>
             <p><%= idea.content.first(80) %>.....</p>
@@ -22,11 +21,11 @@
       </div>
     </div>
 
-    <%# if i ==10 %>
-      <%# break %>
-    <%# end %>
+    <% if i ==2 %>
+      <% break %>
+    <% end %>
 
   <% end %>
-</div>
+
 
 <h3><%#= link_to "Click here to see all the ideas", ideas_path %></h3>

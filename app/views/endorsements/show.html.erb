@@ -3,6 +3,8 @@
   <h2>Endorsement amount: <%= number_to_currency(@endorsement.amount) %> </h2>
 </div>
 
-<%= link_to "Edit this endorsement", edit_idea_endorsement_path(@endorsement.idea, @endorsement) %>
+<%= link_to "Back", idea_endorsements_path%>
 
-<h1>This needs to find a specific endorsement</h1>
+<% if current_user == @endorsement.author %>
+  <%= link_to "Edit this endorsement", edit_idea_endorsement_path(@endorsement.idea, @endorsement) %>
+<% end %>

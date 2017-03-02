@@ -1,19 +1,29 @@
-<h1>Ideas#edit</h1>
-<p>DELETE THIS VIEW</p>
+<h1>Enter your new idea here</h1>
+<div class="log-in">
 
-<h2> Edit the idea titled</h2>
-
-<%= link_to "Back to all ideas", ideas_path %>
+<%= link_to "Back", ideas_path %>
 
 <%= form_for @idea do |f| %>
-  <%= f.label :author %>
-  <%= f.text_field :author %>
 
-  <%= f.label :title %>
-  <%= f.text_field :title %>
+  <div class="form-group">
+    <%= f.label :author %><br />
+    <%= f.text_field :author, :required => true, :placeholder=>"Author's Full Name" %><br />
+  </div>
 
-  <%= f.label :content %>
-  <%= f.text_field :content %>
+  <div class="form-group">
+    <%= f.label :title %><br />
+    <%= f.text_field :title, :required => true, :placeholder=>'Make it good.. ' %><br />
+  </div>
+  <br />
+  <div class ="form-group">
+    <%= f.label :content %><br />
+    <%= f.text_area :content, :required => true, :placeholder=>'Lay it on me...'  %>
+    <br />
 
-  <%= f.submit %>
+  </div>
+  <div>
+    <span class="btn-default"><%= f.submit %></span>
+  </div>
 <% end %>
+
+</div>

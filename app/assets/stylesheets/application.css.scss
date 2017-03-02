@@ -17,6 +17,14 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.idea-title {
+  font-size: 30px;
+  color: #079C6F;
+}
+
+.idea-author {
+  color: #E84C22;
+}
 
 .logo a {
   font-family: 'Rock Salt', cursive;
@@ -25,9 +33,14 @@
   color: #9C2707;
 }
 
+.message {
+  color:#E84C22;
+}
+
 .links a {
-  font-size: 30px;
+  font-size: 36px;
   color: #9C2707;
+  text-decoration: none;
 }
 
 .text-center {
@@ -35,7 +48,7 @@
 }
 
 .pad-left {
-  padding-left: 150px;
+  padding-left: 200px;
 }
 
 .identify-box {
@@ -44,9 +57,21 @@
   text-align: center;
 }
 
-.center-boxes {
-  margin:auto 0;
+.window {
+  height: 100%;
+  width: 100%;
+}
 
+.center-boxes {
+  display: block;
+  margin: auto 0;
+
+}
+
+.center-block {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .menu-button {
@@ -57,12 +82,17 @@
   font-size: 28px;
 }
 
-.content {
-  width: 86%;
-  height: 100%;
-}
 
 body {
   font-family: 'Architects Daughter', cursive;
+  background-color: #FDF3E7;
+}
+
+.log-in {
+  font-size: 24px;
+}
+
+p {
+  font-size: 22px;
 
 }

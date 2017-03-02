@@ -1,16 +1,20 @@
+<h1> Here you can edit your endorsement: <br /><br /><span class="idea-title"> <%=@idea.title.upcase %></span> </h1>
 
-<h3>Edit endorsement for <%=@endorsement.author %></h3>
+  <div class="log-in">
 
-<%= form_for [@idea, @endorsement] do |f| %>
-  <%= f.label :author %>
-  <%= f.text_field :author %>
+  <%= form_for [@idea, @endorsement] do |f| %>
 
-  <%= f.label :amount %>
-  <%= f.text_field :amount %>
-
-  <%= f.submit %>
-<% end %>
-
-
-
-<h1>Delete this view</h1>
+    <div class="form-group">
+      <%= f.label :author, "Endorser: " %><br />
+      <%= f.text_field :author, :required => true, :placeholder=>'Endorser Full Name' %>
+    </div>
+    <div class="form-group">
+    <%= f.label :amount, "Enter the amount: "%><br />
+    <%= number_to_currency(f.text_field :amount, :required => true, :placeholder=>'US Dollars') %>
+    </div>
+    <div>
+      <span class="btn-default">
+      <%= f.submit %></span>
+    </div>
+  <% end %>
+  </div>

@@ -23,9 +23,15 @@
           <ul class="dropdown-menu menu-button">
             <% if !current_user %>
             <li><%= link_to "Sign up", new_user_registration_path %></li>
+            <li role="separator" class="divider"></li>
             <li><%= link_to "Sign in", new_user_session_path %></li>
+            <li role="separator" class="divider"></li>
+            <li><%= link_to "Forgot your password?", new_password_path(resource_name) %></li>
             <% else %>
+            <li><%= link_to "See all ideas", ideas_path %></li>
+            <li role="separator" class="divider"></li>
             <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete%></li>
+
             <% end %>
           </ul>
         </li>
