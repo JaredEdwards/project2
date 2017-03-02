@@ -9,6 +9,9 @@
   </head>
 
   <body>
+
+    <%= render partial: "shared/navbar" %>
+    <div class="container-fluid center-boxes">
   <nav>
     <h1><%= link_to "View The Ideas", ideas_path %></h1>
     <% if !current_user %>
@@ -19,9 +22,16 @@
       <br /><h3>User: <%= current_user.email %></h3>
     <% end %>
   </nav>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <% if flash[:alert] %>
+    <div class="alert alert-warning" role="alert">Signed out</div>
+  <% end %>
+  <% if flash[:notice] %>
+    <div class="alert alert-success" role="alert">Signed in</div>
+  <% end %>
+
 
     <%= yield %>
+    
+  </div>
   </body>
 </html>
